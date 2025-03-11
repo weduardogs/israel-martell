@@ -1,0 +1,445 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply Lucida Grande font globally with fallbacks */
+body {
+    font-family: 'Lucida Grande', 'Arial', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('images/web_01.jpg') no-repeat center center/cover;
+    width: 100vw;
+}
+
+.navbar {
+    background: transparent !important;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px; /* Increased spacing between navbar items */
+}
+
+.hero-text-top {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    color: white;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    text-align: right;
+}
+
+.hero-text-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    text-align: right;
+}
+
+.hero-text-bottom ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hero-text-bottom ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Bio Section General Styling */
+.bio-section {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: hidden; /* Prevent vertical scrollbar */
+}
+
+.bio-image {
+    background: url('images/web_02.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.bio-text {
+    color: white;
+    padding: 2rem;
+    position: absolute;
+    top: 10%; /* Moved higher to prevent bottom cut-off */
+    left: 5%;
+    width: 45%;
+    font-size: clamp(0.65rem, 1.2vw, 0.85rem); /* Smaller font size for better fit */
+    text-align: left;
+    transform: translateY(0); /* Reset transform */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.bio-text h2 {
+    margin-bottom: 0.5rem; /* Reduced margin */
+    font-size: clamp(1rem, 1.5vw, 1.2rem); /* Smaller heading size */
+}
+
+.bio-text p {
+    margin-bottom: 0.5rem; /* Reduced margin */
+    line-height: 1.3; /* Tighter line height */
+    word-wrap: break-word; /* Ensure text wraps properly */
+}
+
+.gallery-section {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.gallery-slideshow {
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: no-repeat center center/cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.services-catalog {
+    min-height: 50vh;
+    width: 100vw;
+    padding: 0;
+}
+
+.services-row {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping unless in mobile view */
+    width: 100%;
+    height: 100%;
+}
+
+.service-card {
+    position: relative;
+    flex: 1; /* Equal width for each card */
+    min-height: 50vh;
+    background: no-repeat center center/cover;
+    overflow: hidden;
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+}
+
+.service-card:hover .service-overlay {
+    opacity: 1;
+}
+
+/* Additional Photo */
+.additional-photo {
+    min-height: 100vh;
+    width: 100vw;
+    background: no-repeat center center/cover;
+}
+
+/* Footer */
+.footer-section {
+    background: black;
+    color: white;
+    width: 100vw;
+    padding: 2rem 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-link {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    margin-bottom: 1rem;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-button:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+.whatsapp-button i {
+    font-size: 30px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.whatsapp-button {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Slide Animations */
+@keyframes slideFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideFromRight {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.slide-left {
+    animation: slideFromLeft 1s ease-out forwards;
+}
+
+.slide-right {
+    animation: slideFromRight 1s ease-out forwards;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 576px) { /* Adjusted to sm breakpoint */
+    .hero-text-top {
+        top: 60px;
+        right: 10px;
+        font-size: clamp(0.8rem, 3vw, 1.2rem);
+    }
+
+    .hero-text-bottom {
+        bottom: 10px;
+        right: 10px;
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+    }
+
+    .bio-section {
+        min-height: 100vh; /* Ensure full height */
+        width: 100vw;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+        overflow-y: hidden; /* Prevent vertical scrollbar */
+    }
+
+    .bio-image {
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    .bio-text {
+        top: 5%; /* Moved even higher to prevent bottom cut-off */
+        left: 5%; /* Align to the left with small margin */
+        transform: none; /* Remove transform for simplicity */
+        width: 90%; /* Use almost full width with padding */
+        max-width: 90%; /* Prevent overflow */
+        padding: 1rem; /* Reduced padding for mobile */
+        font-size: clamp(0.5rem, 1.8vw, 0.65rem); /* Smaller font size to fit content */
+        text-align: left; /* Align text to the left */
+    }
+
+    .bio-text h2 {
+        font-size: clamp(0.8rem, 2vw, 1rem); /* Smaller heading size */
+        margin-bottom: 0.3rem; /* Reduced margin */
+    }
+
+    .bio-text p {
+        margin-bottom: 0.3rem; /* Reduced margin between paragraphs */
+        line-height: 1.2; /* Even tighter line height to save space */
+    }
+
+    .gallery-section {
+        min-height: 60vh;
+    }
+
+    .services-catalog {
+        min-height: auto;
+    }
+
+    .services-row {
+        flex-direction: column;
+    }
+
+    .service-card {
+        min-height: 33vh;
+        width: 100%;
+    }
+
+    .additional-photo {
+        min-height: 60vh;
+    }
+
+    .navbar-collapse.show .navbar-nav {
+        background: rgba(0, 0, 0, 0.8); /* Opaque effect when menu is shown */
+        text-align: center; /* Center menu options */
+        padding: 1rem;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0; /* Vertical spacing for mobile menu */
+    }
+
+    .navbar-collapse.show .nav-link {
+        animation: none; /* Remove slide animation when collapsed */
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .hero-text-top {
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+    }
+
+    .hero-text-bottom {
+        font-size: clamp(0.6rem, 2vw, 0.9rem);
+    }
+
+    .bio-text {
+        padding: 1rem;
+        font-size: clamp(0.7rem, 2vw, 0.9rem); /* Further reduced font size */
+    }
+
+    .service-overlay h3 {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
+
+    .service-overlay p {
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+    }
+
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-button i {
+        font-size: 25px;
+    }
+
+}
+
+@media (min-width: 360px) and (max-width: 428px) {
+    .bio-section {
+        min-height: 100vh; /* Ensure full height for centering */
+        width: 100vw;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+        overflow-y: hidden; /* Prevent vertical scrollbar */
+    }
+
+    .bio-image {
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    .bio-text {
+        position: absolute;
+        top: 20%; /* Further reduced to bring text higher for iPhone 12-like screens */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, 0); /* Center horizontally without vertical shift */
+        width: 90%; /* Use almost full width with padding */
+        max-width: 90%; /* Prevent overflow */
+        padding: 0.75rem; /* Slightly tighter padding */
+        font-size: clamp(0.55rem, 1.8vw, 0.7rem); /* Even smaller font size for better fit */
+        text-align: left; /* Align text to the left within the centered container */
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .bio-text h2 {
+        font-size: clamp(0.85rem, 2.3vw, 1rem); /* Slightly smaller heading size */
+        margin-bottom: 0.4rem; /* Reduced margin */
+    }
+
+    .bio-text p {
+        margin-bottom: 0.4rem; /* Reduced margin between paragraphs */
+        line-height: 1.2; /* Even tighter line height to save space */
+        word-wrap: break-word; /* Ensure long words wrap properly */
+    }
+}
+
+/* Media Query for Tablets (577px to 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
+    .bio-text {
+        top: 10%; /* Moved higher for tablets */
+        width: 70%;
+        left: 5%;
+        font-size: clamp(0.6rem, 1.5vw, 0.8rem); /* Adjusted font size */
+    }
+}

@@ -397,40 +397,11 @@ body {
 }
 
 @media (min-width: 360px) and (max-width: 428px) {
-    .bio-section {
-        min-height: 100vh; /* Ensure full height for centering */
-        width: 100vw;
-        overflow-x: hidden; /* Prevent horizontal overflow */
-        overflow-y: hidden; /* Prevent vertical scrollbar */
-    }
-
-    .bio-image {
-        min-height: 100vh;
-        width: 100%;
-    }
-
     .bio-text {
-        position: absolute;
-        top: 20%; /* Further reduced to bring text higher for iPhone 12-like screens */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, 0); /* Center horizontally without vertical shift */
-        width: 90%; /* Use almost full width with padding */
-        max-width: 90%; /* Prevent overflow */
-        padding: 0.75rem; /* Slightly tighter padding */
-        font-size: clamp(0.55rem, 1.8vw, 0.7rem); /* Even smaller font size for better fit */
-        text-align: left; /* Align text to the left within the centered container */
-        box-sizing: border-box; /* Ensure padding is included in width */
-    }
-
-    .bio-text h2 {
-        font-size: clamp(0.85rem, 2.3vw, 1rem); /* Slightly smaller heading size */
-        margin-bottom: 0.4rem; /* Reduced margin */
-    }
-
-    .bio-text p {
-        margin-bottom: 0.4rem; /* Reduced margin between paragraphs */
-        line-height: 1.2; /* Even tighter line height to save space */
-        word-wrap: break-word; /* Ensure long words wrap properly */
+        top: 10%; /* Moved higher for tablets */
+        width: 70%;
+        left: 5%;
+        font-size: clamp(0.6rem, 1.5vw, 0.8rem); /* Adjusted font size */
     }
 }
 
